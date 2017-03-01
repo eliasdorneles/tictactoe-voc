@@ -12,7 +12,10 @@ class MyApp:
     def link(self, activity):
         self._activity = activity
 
-    def _create_buttons(self):
+    def onCreate(self):
+        layout = LinearLayout(self._activity)
+        layout.setOrientation(LinearLayout.VERTICAL)
+
         def create_button_row():
             return [
                 Button(self._activity),
@@ -20,17 +23,11 @@ class MyApp:
                 Button(self._activity),
             ]
 
-        return [
+        self.buttons = [
             create_button_row(),
             create_button_row(),
             create_button_row(),
         ]
-
-    def onCreate(self):
-        layout = LinearLayout(self._activity)
-        layout.setOrientation(LinearLayout.VERTICAL)
-
-        self.buttons = self._create_buttons()
 
         for row in self.buttons:
             for button in row:

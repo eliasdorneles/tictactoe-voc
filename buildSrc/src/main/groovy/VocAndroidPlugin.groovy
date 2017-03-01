@@ -19,12 +19,13 @@ class VocPlugin implements Plugin<Project> {
                     }
                 } else {
                     // TODO: download python-android-support.jar from an official release
-                    throw new RuntimeException("Using an official release isn't implemented yet," +
-                                               " please set voc.buildFromSourceDir to a local copy of VOC sources")
+                    throw new RuntimeException(
+                            "Using an official VOC release isn't implemented yet.\n" +
+                            "Please download VOC and point voc.buildFromSourceDir in your build.gradle to it.")
                 }
                 project.exec {
                     // TODO: compile a directory instead of a hardcoded module
-                    commandLine "voc -v app.py -o libs -n ${project.voc.namespace}".split()
+                    commandLine "voc -v ${project.voc.sourcesDir} -o libs -n ${project.voc.namespace}".split()
                 }
                 project.exec {
                     workingDir 'libs'
@@ -46,5 +47,6 @@ class VocPlugin implements Plugin<Project> {
 
 class VocPluginExtension {
     String namespace = "com.example"
+    def sourcesDir
     def buildFromSourceDir
 }

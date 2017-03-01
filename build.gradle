@@ -30,6 +30,6 @@ apply plugin: VocPlugin
 
 voc {
     namespace = 'org.eliasdorneles'
-    # TODO: remove this when VOC gets a new release
-    buildFromSourceDir = "$System.env.HOME/src/voc-dev/voc"
+    sourcesDir = 'tictactoe'
+    buildFromSourceDir = "$System.env.HOME/src/voc-dev/voc" // TODO: remove when VOC gets new release
 }

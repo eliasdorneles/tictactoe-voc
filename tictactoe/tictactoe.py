@@ -19,12 +19,13 @@ class Game:
             return all(row) and len(set(row)) == 1
 
         inverted_board = [
-            [line[i] for line in self.board]
-            for i in range(3)
+            [line[0] for line in self.board],
+            [line[1] for line in self.board],
+            [line[2] for line in self.board],
         ]
         return any([
-            any([is_equal_row(line) for line in self.board]),
-            any([is_equal_row(line) for line in inverted_board]),
+            any(is_equal_row(line) for line in self.board),
+            any(is_equal_row(line) for line in inverted_board),
             is_equal_row([self.board[0][0], self.board[1][1], self.board[2][2]]),
             is_equal_row([self.board[2][0], self.board[1][1], self.board[0][2]])
         ])

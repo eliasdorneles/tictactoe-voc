@@ -31,7 +31,7 @@ public class PythonActivity extends AppCompatActivity {
         Log.i("Python", "Starting Python app...");
         try {
             // Load the app module
-            java.lang.Class app_module = java.lang.Class.forName("org.eliasdorneles.app.__init__");
+            java.lang.Class app_module = java.lang.Class.forName("org.eliasdorneles.tictactoe.app.__init__");
 
             // Find the main method in the app module...
             java.lang.reflect.Method main = app_module.getMethod("main", java.lang.String[].class);
