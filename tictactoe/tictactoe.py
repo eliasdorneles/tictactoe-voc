@@ -42,4 +42,8 @@ class Game:
         elif self._is_full():
             raise ValueError("loosers")
         self._switch_player()
+        self.print()
 
+    def print(self):
+        for line in self.board:
+            print(' '.join(line))
