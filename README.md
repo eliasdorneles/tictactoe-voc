@@ -17,6 +17,6 @@ Build the app with:
     ./gradlew build vocBuild
 
 
-Install the app in an emulator (has to be already running) or device:
+Install and run the app in an emulator (has to be already running) or device:
 
-    ./gradlew installDebug
+    ./gradlew installDebug run
