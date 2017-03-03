@@ -20,3 +20,6 @@ Build the app with:
 Install and run the app in an emulator (has to be already running) or device:
 
     ./gradlew installDebug run
+
+
+![Game screenshot](screenshot.png)
