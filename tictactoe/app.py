@@ -3,6 +3,7 @@ from android.util import Log
 from android.widget import LinearLayout
 from android.widget import Button
 from android.widget import TextView
+from android.view import Gravity
 import android.view
 
 
@@ -113,14 +114,15 @@ class MyApp:
         vlayout.setOrientation(LinearLayout.VERTICAL)
 
         self.top_label = TextView(self._activity)
-        self.top_label.setTextSize(30)
+        self.top_label.setTextSize(50)
         vlayout.addView(self.top_label)
 
         for row in self.buttons:
             hlayout = LinearLayout(self._activity)
             hlayout.setOrientation(LinearLayout.HORIZONTAL)
+            hlayout.setGravity(Gravity.CENTER)
             for button in row:
-                button.setTextSize(40)
+                button.setTextSize(50)
                 hlayout.addView(button)
 
             vlayout.addView(hlayout)
@@ -133,6 +135,11 @@ class MyApp:
         self.restart_button.setText('Restart')
         self.restart_button.setOnClickListener(ButtonClick(self.restart_game))
         vlayout.addView(self.restart_button)
+
+        footer = TextView(self._activity)
+        footer.setText('Powered by Python')
+        footer.setGravity(Gravity.CENTER)
+        vlayout.addView(footer)
 
         self.updateUI()
 
