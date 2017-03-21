@@ -164,20 +164,18 @@ class MyApp:
                     button.setText(' ')
 
     def play(self, i, j):
-        # TODO: why returning early like this doesn't work?
-        # if self.game.game_over:
-        #     return
+        if self.game.game_over:
+            return
 
-        if not self.game.game_over:
-            print('going to play game', self.game, ' in position:', i, j)
-            try:
-                self.game.play(i, j)
-                self.message = None
-            except KeyError as e:
-                message = str(e)[1:-1]
-                print('message', message)
-                self.message = message
-            self.updateUI()
+        print('going to play game', self.game, ' in position:', i, j)
+        try:
+            self.game.play(i, j)
+            self.message = None
+        except KeyError as e:
+            message = str(e)[1:-1]
+            print('message', message)
+            self.message = message
+        self.updateUI()
 
 
 app = MyApp()
