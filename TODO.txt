@@ -1,3 +1,0 @@
-[ ] parameterize Python sources directory
-[ ] parameterize app name and stuff in PythonActivity.java, AndroidManifest.xml and build.gradle
-[ ] update Voc Android Plugin to download JAR from official release

@@ -1,5 +1,6 @@
 from tictactoe import tictactoe
 import unittest
+# XXX: tests are currently broken, because of importing
 
 class GameTest(unittest.TestCase):
     def setUp(self):
