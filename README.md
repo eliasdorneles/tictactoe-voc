@@ -1,25 +1,29 @@
 Tic Tac Toe
 ===========
 
-This is a native Android app written in Python.
+This is a native Android app written in Python, using the [BeeWare](http://pybee.org/) suite.
 
-The Python code is compiled to Java bytecode using [VOC](http://pybee.org/voc)
-
+The Python code is compiled to Java bytecode using [VOC](http://pybee.org/voc),
+and the Android APK is packaged using [briefcase](https://github.com/pybee/briefcase).
 
 **Requirements**
 
 * JDK
 * Android SDK
 
+## How to run
 
-Build the app with:
+Ensure that you have [Android SDK](https://developer.android.com/studio/index.html#downloads) installed.
 
-    ./gradlew build vocBuild
+Install the Python development requirements:
 
+    pip install -r requirements-dev.txt
 
-Install and run the app in an emulator (has to be already running) or device:
+[Plug in your Android device](https://developer.android.com/training/basics/firstapp/running-app.html) or [start an emulator](https://developer.android.com/studio/run/emulator-commandline.html).
 
-    ./gradlew installDebug run
+Build and run the app:
 
+    python setup.py android
+    (cd android && ./gradlew run)
 
 ![Game screenshot](screenshot.png)
