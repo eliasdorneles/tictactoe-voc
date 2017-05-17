@@ -8,20 +8,6 @@ import android.view
 from tictactoe import tictactoe
 
 
-def enumerate1(iterable):
-    index = 0
-    for it in iterable:
-        yield (index, it)
-        index += 1
-
-
-def enumerate2(iterable):
-    index = 0
-    for it in iterable:
-        yield (index, it)
-        index += 1
-
-
 class ButtonClick(implements=android.view.View[OnClickListener]):
     def __init__(self, callback, *args, **kwargs):
         self.callback = callback
@@ -102,8 +88,8 @@ class MyApp:
             self.top_label.setText(self.message)
         else:
             self.top_label.setText('Player: ' + self.game.current_player)
-        for i, row in enumerate1(self.buttons):
-            for j, button in enumerate2(row):
+        for i, row in enumerate(self.buttons):
+            for j, button in enumerate(row):
                 thing = self.game.board[i][j]
                 if thing:
                     button.setText(thing)
