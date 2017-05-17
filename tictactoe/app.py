@@ -125,6 +125,7 @@ class MyApp:
         self.updateUI()
 
 
-app = MyApp()
-activity = android.PythonActivity.setListener(app)
-app.link(activity)
+def main():
+    app = MyApp()
+    activity = android.PythonActivity.setListener(app)
+    app.link(activity)
