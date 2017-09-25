@@ -20,14 +20,11 @@ class ButtonClick(implements=android.view.View[OnClickListener]):
 
 class MyApp:
     def __init__(self):
-        self._activity = None
+        self._activity = android.PythonActivity.setListener(self)
         self.buttons = []
         self.top_label = None
         self.game = tictactoe.Game()
         self.message = None
-
-    def link(self, activity):
-        self._activity = activity
 
     def onCreate(self):
         def create_button_row():
@@ -112,6 +109,4 @@ class MyApp:
 
 
 def main():
-    app = MyApp()
-    activity = android.PythonActivity.setListener(app)
-    app.link(activity)
+    MyApp()
